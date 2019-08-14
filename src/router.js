@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-
+import signUp from "./views/signUp.vue";
+import dashboard from "./views/dashboard.vue";
+import store from "./store";
 Vue.use(Router);
 
 export default new Router({
@@ -10,17 +11,18 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      name: "signUp",
+      component: signUp,
+
     },
     {
-      path: "/about",
-      name: "about",
+      path: "/dashboard",
+      name: "dashboard",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: dashboard,
+
     }
   ]
 });
